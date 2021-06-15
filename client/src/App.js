@@ -18,6 +18,12 @@ function App() {
     setTodoInput("");
   };
 
+  const onDeleteTodo = (todoId) => {
+    setTodos((prevTodos) =>
+      prevTodos.filter((prevTodo) => prevTodo.id !== todoId)
+    );
+  };
+
   const createTodo = (name) => {
     if (!name || !name.length) {
       throw new Error(
@@ -26,7 +32,9 @@ function App() {
     }
     return {
       id: uuidv4(),
+      createdAt: new Date(),
       name,
+      completed: true,
     };
   };
 
@@ -64,6 +72,13 @@ function App() {
               id={todo.id}
             />
             <label htmlFor={todo.id}>{todo.name}</label>
+            <button
+              type="button"
+              className="delete-todo-btn"
+              onClick={() => onDeleteTodo(todo.id)}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
