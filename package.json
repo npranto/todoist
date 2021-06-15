@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/npranto/todoist/issues"
   },
-  "homepage": "https://github.com/npranto/todoist#readme"
+  "homepage": "https://github.com/npranto/todoist#readme",
+  "dependencies": {}
 }
