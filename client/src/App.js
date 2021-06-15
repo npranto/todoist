@@ -27,6 +27,20 @@ function App() {
     );
   };
 
+  const onUpdateTodo = (todoId, updatedTodo) => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((prevTodo) => {
+        if (prevTodo.id === todoId) {
+          return {
+            ...prevTodo,
+            name: updatedTodo,
+          };
+        }
+        return prevTodo;
+      });
+    });
+  };
+
   const createTodo = (name) => {
     if (!name || !name.length) {
       throw new Error(
@@ -49,7 +63,11 @@ function App() {
         todoInput={todoInput}
         onTodoInputChange={onTodoInputChange}
       />
-      <TodoList todos={todos} onDeleteTodo={onDeleteTodo} />
+      <TodoList
+        todos={todos}
+        onDeleteTodo={onDeleteTodo}
+        onUpdateTodo={onUpdateTodo}
+      />
     </div>
   );
 }

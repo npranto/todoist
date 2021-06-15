@@ -1,17 +1,19 @@
+.TodoItem,
 .TodoItem {
   padding: 0.75em 0.25em;
   font-size: 1.25rem;
   background-color: lightgrey;
   margin: 0.5em 0;
-  display: flex;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
 }
 
 .TodoItem input[type="checkbox"] {
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 
 .TodoItem label {
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .TodoItem .delete-todo-btn {
@@ -21,4 +23,40 @@
   font-size: 0.75rem;
   margin: 0 0.25em;
   align-self: baseline;
+}
+
+.TodoItem .edit-todo-btn {
+  padding: 0.5em;
+  background-color: orange;
+  color: white;
+  font-size: 0.75rem;
+  margin: 0 0.25em;
+  align-self: baseline;
+}
+
+.TodoItem .todo-edit-input {
+  padding: 0.25em;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.TodoItem .update-todo-btn,
+.TodoItem .cancel-update-todo-btn {
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  font-size: 0.75rem;
+  margin: 0 0.25em;
+  align-self: baseline;
+}
+
+@media screen and (min-width: 600px) {
+  .TodoItem,
+  .TodoItem .EditTodoForm {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .TodoItem label {
+    flex-grow: 1;
+  }
 }
