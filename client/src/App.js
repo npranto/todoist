@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
+import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
+import Nav from "./components/Nav/Nav";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -40,48 +43,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="header">
-        <h1>Todoist</h1>
-      </header>
-
-      <form className="todo-form" onSubmit={onAddTodo}>
-        <label htmlFor="todoInput">
-          <input
-            type="text"
-            name="todoInput"
-            className="todo-input"
-            minLength="1"
-            maxLength="150"
-            value={todoInput}
-            onChange={onTodoInputChange}
-            required
-          />
-        </label>
-        <button type="submit" className="add-todo-btn">
-          Add Todo
-        </button>
-      </form>
-
-      <ul className="todo-list">
-        {todos.map((todo) => (
-          <li key={todo.id} className="todo-item">
-            <input
-              type="checkbox"
-              className="todo-checkbox"
-              name={todo.id}
-              id={todo.id}
-            />
-            <label htmlFor={todo.id}>{todo.name}</label>
-            <button
-              type="button"
-              className="delete-todo-btn"
-              onClick={() => onDeleteTodo(todo.id)}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <Nav />
+      <AddTodoForm
+        onAddTodo={onAddTodo}
+        todoInput={todoInput}
+        onTodoInputChange={onTodoInputChange}
+      />
+      <TodoList todos={todos} onDeleteTodo={onDeleteTodo} />
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.AddTodoForm {
+  margin: 0 auto;
+  padding: 1em 0;
+  display: flex;
+}
+
+.AddTodoForm .todo-input {
+  padding: 0.5em;
+  font-size: 1.5rem;
+}
+
+.AddTodoForm .add-todo-btn {
+  padding: 1em;
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+}

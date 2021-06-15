@@ -1,0 +1,24 @@
+.TodoItem {
+  padding: 0.75em 0.25em;
+  font-size: 1.25rem;
+  background-color: lightgrey;
+  margin: 0.5em 0;
+  display: flex;
+}
+
+.TodoItem input[type="checkbox"] {
+  margin-right: 1em;
+}
+
+.TodoItem label {
+  flex-grow: 1;
+}
+
+.TodoItem .delete-todo-btn {
+  padding: 0.5em;
+  background-color: maroon;
+  color: white;
+  font-size: 0.75rem;
+  margin: 0 0.25em;
+  align-self: baseline;
+}
