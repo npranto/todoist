@@ -1,0 +1,23 @@
+{
+  "name": "todoist",
+  "version": "0.0.1",
+  "description": "A web and mobile friendly task manager application for your regular day to day tasks",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npranto/todoist.git"
+  },
+  "keywords": [
+    "todos",
+    "task-manager"
+  ],
+  "author": "Nazmuz Pranto <npranto@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npranto/todoist/issues"
+  },
+  "homepage": "https://github.com/npranto/todoist#readme"
+}
