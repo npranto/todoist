@@ -1,12 +1,16 @@
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { useState, useEffect } from "react";
 import "./App.css";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import Nav from "./components/Nav/Nav";
 import TodoList from "./components/TodoList/TodoList";
+import getUniqueId from "./helpers/getUniqueId";
+import {
+  getTodosFromLocalStorage,
+  saveTodosToLocalStorage,
+} from "./helpers/localStorage";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getTodosFromLocalStorage());
   const [todoInput, setTodoInput] = useState("");
 
   const onTodoInputChange = (e) => {
@@ -48,12 +52,16 @@ function App() {
       );
     }
     return {
-      id: uuidv4(),
+      id: getUniqueId(),
       createdAt: new Date(),
       name,
       completed: true,
     };
   };
+
+  useEffect(() => {
+    saveTodosToLocalStorage(todos);
+  }, [todos]);
 
   return (
     <div className="App">
