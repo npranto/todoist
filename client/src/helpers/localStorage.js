@@ -5,7 +5,7 @@ const TODOS = "todoist:::todos";
  * @returns
  */
 export const getTodosFromLocalStorage = () =>
-  JSON.parse(localStorage.getItem("todoist:::todos")) || [];
+  JSON.parse(localStorage.getItem(TODOS)) || [];
 
 /**
  * Saves a list of todos in local storage
@@ -13,4 +13,4 @@ export const getTodosFromLocalStorage = () =>
  * @returns
  */
 export const saveTodosToLocalStorage = (todos = []) =>
-  localStorage.setItem("todoist:::todos", JSON.stringify(todos));
+  localStorage.setItem(TODOS, JSON.stringify(todos));

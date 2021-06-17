@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- [#xzfuq0](https://app.clickup.com/t/xzfuq0) - Adds feature to store and restore todos to local storage
+- [#xzfuq0](https://app.clickup.com/t/xzfuq0)
+  - Adds feature to store and restore todos to local storage
+  - Adds `localStorage.js` and `getUniqueId` helpers
 
 ## [0.4.0] - 2021-06-15
 
