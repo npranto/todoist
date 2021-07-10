@@ -8,6 +8,7 @@ import {
   getTodosFromLocalStorage,
   saveTodosToLocalStorage,
 } from "./helpers/localStorage";
+import { getUserByUserIdAwait } from "./services/firebase";
 
 function App() {
   const [todos, setTodos] = useState(getTodosFromLocalStorage());
@@ -62,6 +63,14 @@ function App() {
   useEffect(() => {
     saveTodosToLocalStorage(todos);
   }, [todos]);
+
+  useEffect(() => {
+    const doSomething = async () => {
+      const a = await getUserByUserIdAwait("nprantoa");
+      console.log(a);
+    };
+    doSomething();
+  }, []);
 
   return (
     <div className="App">
